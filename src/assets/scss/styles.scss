@@ -1,0 +1,231 @@
+/**
+Stylesheet for the application.
+*/
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #ffe142 !important;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+a{
+    color: #000 !important;
+    text-decoration: none !important;
+
+    border-bottom: 1px solid #000;
+}
+
+/**
+Header
+*/
+.website-header{
+    padding: 15px 0px;
+
+    .website-inner{
+
+        border-bottom: 2px solid #000;
+
+        .row{
+
+            .col-2{
+
+            }
+
+            .col-10{
+
+                .menu{
+
+                    ul{
+                        padding: 0px;
+                        margin: 0px;
+                        list-style: none;
+                        text-align: right;
+
+                        li{
+                            display: inline-block;
+                            margin-left: 20px;
+                            margin-top: 5px;
+
+                            a{
+                                color: #000;
+                                text-decoration: none;
+
+                                border-bottom: 1px solid #000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+Page Home
+*/
+.page-home{
+
+    .page-home-head{
+        padding: 15px 0px;
+
+        .home-head-left{
+            text-align: left;
+
+            h3{
+                font-weight: 300;
+            }
+        }
+
+        .home-head-right{
+            text-align: right;
+
+            h3{
+                font-weight: 300;
+            }
+        }
+    }
+
+    .page-home-body{
+        @media screen and (max-width: 769px){
+            padding: 25px;
+        }
+
+        .home-body-left{
+            padding: 40px 0px;
+
+            .home-body-left-weather-icon{
+
+                h1{
+                    font-size: 5em;
+
+                    img{
+                        background: white;
+                    }
+                }
+            }
+
+            .home-body-left-weather-info{
+                    
+                h1{
+                    font-size: 6em;
+
+                    @media screen and (max-width: 769px){
+                        font-size: 4em;
+                    }
+                    
+                }
+            }
+        }
+
+        .home-body-right{
+            padding: 15px 0px;
+
+            .home-body-right-weather-info{
+                @media screen and (max-width: 769px){
+                    margin-top: 10px;
+                }
+                margin-top: 100px;
+
+                .home-body-right-weather-info-item{
+                    border-radius: 4px;
+                    margin-bottom: 15px;
+
+                    h3{
+                        font-weight: 300;
+                    }
+
+                    h2{
+
+                    }
+                }
+            }
+        }
+    }
+
+    .page-home-forecast{
+        border-top: 2px solid #000;
+        padding: 20px 0px;
+
+        @media screen and (max-width: 769px){
+            padding: 25px;
+        }
+
+        .home-forecast{
+            padding: 0px;
+
+            .home-forecast-title{
+
+                h2{
+                    //font-weight: 300;
+                    font-size: 1.5em;
+                }
+            }
+
+            .home-forecast-body{
+                padding: 20px 0px;
+
+                .home-forecast-body-item{                    
+                    border-radius: 4px;
+
+                    .home-forecast-body-item-day{
+                        text-align: center;
+                        color: #fff;
+                        font-weight: 300;
+                        background: #000;
+                        padding: 10px 10px;
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Forecast items
+.forecast-item{
+    border-radius: 4px;
+    margin-bottom: 15px;
+
+    .forecast-item-body{
+        background: white;
+        border-radius: 5px;
+        padding: 5px;
+
+        .forecast-item-body-icon{
+            padding: 20px;
+            padding-bottom: 0px;
+
+            h1{
+                font-size: 3em;
+                text-align: center;
+            }
+
+            h1.weather-time{
+                font-size: 1.2em;
+                font-weight: 400;
+                text-align: center;
+            }
+        }
+
+        .forecast-item-body-info{
+            padding: 20px;
+
+            h1{
+                font-size: 1.8em;
+                font-weight: 300;
+                text-align: center;
+            }
+
+            h5{
+                font-size: 1.1em;
+                font-weight: 400;
+                text-align: center;
+            }
+
+        }
+    }
+}

@@ -231,6 +231,10 @@ Page Home
 }
 
 .welcomeContainer{
+    @media screen and (max-width: 769px){
+        width: 70%;
+    }
+
     width: 500px;
     background: white;
     border-radius: 5px;

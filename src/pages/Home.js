@@ -283,6 +283,18 @@ export default function Home()
             </Layout>
         )
     } else {
-        return(<div>{locationStatus}</div>)
+        return(
+        <div className='welcomeContainer'>
+            <div className='welcomeHead'>
+                <h3></h3>
+                <h1>Weatherfully</h1>
+                <p>Weatherfully is a simple weather web app</p>
+                <hr />
+                <h3>Enter your location to get started</h3>
+            </div>
+            <p>{locationStatus}</p>
+        </div>
+    
+        )
     }
 }

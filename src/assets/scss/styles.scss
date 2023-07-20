@@ -116,7 +116,7 @@ Page Home
                     @media screen and (max-width: 769px){
                         font-size: 4em;
                     }
-                    
+
                 }
             }
         }
@@ -227,5 +227,31 @@ Page Home
             }
 
         }
+    }
+}
+
+.welcomeContainer{
+    width: 500px;
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10% auto;
+
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+
+    .welcomeHead{
+        text-align: center;
+        margin-bottom: 20px;
+
+        h1{
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+    }
+
+    p{
+        font-size: 1.2em;
+        font-weight: 300;
+        text-align: center;
     }
 }

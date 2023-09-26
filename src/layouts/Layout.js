@@ -48,7 +48,7 @@ export const Layout = ({children}) => {
                 <div className="row">
                     <div className="col-12">
                         <div className="footer">
-                            <p>Weatherfully &copy; 2023 - Created by <a href="jameslatten.com">James</a> from <a href="lattentechnologies.com">Latten Technologies, LLC</a></p>
+                            <p>Weatherfully &copy; 2023 - Created by <a href="https://jameslatten.com">James</a> from <a href="https://lattentechnologies.com">Latten Technologies, LLC</a></p>
                         </div>
                     </div>
                 </div>

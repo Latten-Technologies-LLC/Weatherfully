@@ -36,6 +36,12 @@ export default function Home()
         setForecastData(data);
         console.log(data.city.name)
     }
+
+    // Convert celcius to fahrenheit
+    const convertCelciusToFahrenheit = (c) => {
+        // Round to 2 decimal places
+        return Math.round((c * 9/5) + 32);
+    }
     
     // Get all of the weather data
     const callWeatherData = (data) => {
@@ -100,13 +106,13 @@ export default function Home()
         const weatherDescription = weatherData.weather[0].description;
         const weatherName = weatherData.weather[0].main;
 
-        const weatherTemp = Math.round(weatherData.main.temp * 100) / 100;
-        const weatherTempMin = Math.round(weatherData.main.temp_min * 100) / 100;
-        const weatherTempMax = weatherData.main.temp_max;
+        const weatherTemp = convertCelciusToFahrenheit( Math.round(weatherData.main.temp * 100) / 100 );
+        const weatherTempMin = convertCelciusToFahrenheit( Math.round(weatherData.main.temp_min * 100) / 100 );
+        const weatherTempMax = convertCelciusToFahrenheit( weatherData.main.temp_max );
         const weatherHumidity = weatherData.main.humidity;
         const weatherWindSpeed = weatherData.wind.speed;
         const weatherWindDirection = weatherData.wind.deg;
-        const weatherFeelsLike = weatherData.main.feels_like;
+        const weatherFeelsLike = convertCelciusToFahrenheit( weatherData.main.feels_like );
 
         // Forecast data
         const forecastList = forecastData.list;
@@ -241,7 +247,7 @@ export default function Home()
                                     {forecastList.map((item, index) => {
                                         if (index < 6) {
                                             const forecastIcon = getWeatherIcon(item.weather[0].description);
-                                            const forecastTemp = Math.round(item.main.temp * 100) / 100;
+                                            const forecastTemp = convertCelciusToFahrenheit( Math.round(item.main.temp * 100) / 100 );
                                             const forecastTempMin = Math.round(item.main.temp_min * 100) / 100;
                                             const forecastTempMax = Math.round(item.main.temp_max * 100) / 100;
                                             const forecastHumidity = item.main.humidity;

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 // Layout
 import { Layout } from '../layouts/Layout'
-import { render } from '@testing-library/react';
 
 export default function Home() 
 {
@@ -16,7 +15,6 @@ export default function Home()
     // Openweather API
     const ow_api_key = process.env.REACT_APP_OPENWEATHER_API_KEY;
     const ow_api_url = "https://api.openweathermap.org/data/2.5";
-    const ow_icon_url = "https://openweathermap.org/img/w";
                     
     // Weather data
     const [weatherData, setWeatherData] = useState(null);
@@ -96,13 +94,13 @@ export default function Home()
         if (location){
             callWeatherData(locationData);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location]);
 
     // Render home page if location is not null
     if (location && weatherData != null && forecastData != null) 
     {
         // Great lets get some consts
-        const weatherIcon = weatherData.weather[0].icon;
         const weatherDescription = weatherData.weather[0].description;
         const weatherName = weatherData.weather[0].main;
 
@@ -146,50 +144,6 @@ export default function Home()
         }
 
         const icon = getWeatherIcon(weatherDescription);
-
-        // Display 10 hour forecast
-        const display10HourForecast = () => {
-            if (forecastData != null) {
-                const forecastList = forecastData.list;
-                const forecastCity = forecastData.city.name;
-                const forecastCountry = forecastData.city.country;
-                const forecastListLength = forecastList.length;
-
-                forecastList.map((item, index) => {
-                    if (index < 10) {
-                        const forecastIcon = getWeatherIcon(item.weather[0].description);
-                        const forecastTemp = Math.round(item.main.temp * 100) / 100;
-                        const forecastTempMin = Math.round(item.main.temp_min * 100) / 100;
-                        const forecastTempMax = Math.round(item.main.temp_max * 100) / 100;
-                        const forecastHumidity = item.main.humidity;
-                        const forecastWindSpeed = item.wind.speed;
-                        const forecastWindDirection = item.wind.deg;
-                        const forecastFeelsLike = Math.round(item.main.feels_like * 100) / 100;
-                        const forecastDate = new Date(item.dt * 1000);
-                        const forecastDay = forecastDate.getDay();
-                        const forecastTime = forecastDate.getHours();
-
-                        return (
-                            <div className="forecast-item col-6 col-md-3" key={index}>
-                                <div className="forecast-item-head">
-                                    <h5>{forecastDay} {forecastTime}:00</h5>
-                                </div>
-                                <div className="forecast-item-body">
-                                    <div className="forecast-item-body-icon">
-                                        <h1 className='weather-icon'><i className={forecastIcon}></i></h1>
-                                    </div>
-                                    <div className="forecast-item-body-info">
-                                        <h1>{forecastTemp}<sup>&deg;C</sup></h1>
-                                        <h5>Min: {forecastTempMin}<sup>&deg;C</sup></h5>
-                                        <h5>Max: {forecastTempMax}<sup>&deg;C</sup></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    }
-                });
-            }
-        }
 
         return (
             <Layout>
@@ -248,14 +202,7 @@ export default function Home()
                                         if (index < 6) {
                                             const forecastIcon = getWeatherIcon(item.weather[0].description);
                                             const forecastTemp = convertCelciusToFahrenheit( Math.round(item.main.temp * 100) / 100 );
-                                            const forecastTempMin = Math.round(item.main.temp_min * 100) / 100;
-                                            const forecastTempMax = Math.round(item.main.temp_max * 100) / 100;
-                                            const forecastHumidity = item.main.humidity;
-                                            const forecastWindSpeed = item.wind.speed;
-                                            const forecastWindDirection = item.wind.deg;
-                                            const forecastFeelsLike = Math.round(item.main.feels_like * 100) / 100;
                                             const forecastDate = new Date(item.dt * 1000);
-                                            const forecastDay = forecastDate.getDay();
                                             const forecastTime = forecastDate.getHours();
 
                                             // Convert forecast time to 12 hour
@@ -281,6 +228,7 @@ export default function Home()
                                                 </div>
                                             );
                                         }
+                                        return null;
                                     })}
                             </div>
                         </div>
@@ -292,7 +240,6 @@ export default function Home()
         return(
         <div className='welcomeContainer'>
             <div className='welcomeHead'>
-                <h3></h3>
                 <h1>Weatherfully</h1>
                 <p>Weatherfully is a simple weather web app</p>
                 <hr />

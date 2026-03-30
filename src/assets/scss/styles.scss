@@ -259,3 +259,52 @@ Page Home
         text-align: center;
     }
 }
+
+// About page
+.page-about{
+    .page-about-head{
+        padding: 15px 0px;
+
+        .about-head-left{
+            text-align: left;
+
+            h3{
+                font-weight: 300;
+            }
+        }
+
+        .about-head-right{
+            text-align: right;
+
+            h3{
+                font-weight: 300;
+            }
+        }
+    }
+
+    .page-about-body{
+        @media screen and (max-width: 769px){
+            padding: 25px;
+        }
+
+        padding: 40px 0px;
+
+        .about-body-content{
+            border-radius: 4px;
+            background: white;
+            padding: 20px;
+
+            h1{
+                font-size: 2em;
+                font-weight: 300;
+                text-align: center;
+            }
+
+            p{
+                font-size: 1.2em;
+                font-weight: 300;
+                text-align: center;
+            }
+        }
+    }
+}

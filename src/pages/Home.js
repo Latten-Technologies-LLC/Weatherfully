@@ -14,7 +14,7 @@ export default function Home()
     const [locationData, setLocationData] = useState(null);
 
     // Openweather API
-    const ow_api_key = "3589a3029b300dee11a1b7ec98ce6fb0";
+    const ow_api_key = process.env.REACT_APP_OPENWEATHER_API_KEY;
     const ow_api_url = "https://api.openweathermap.org/data/2.5";
     const ow_icon_url = "https://openweathermap.org/img/w";
                     

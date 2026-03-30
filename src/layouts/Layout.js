@@ -26,7 +26,7 @@ export const Layout = ({children}) => {
                 <div className="row">
                     <div className="col-2">
                         <div className="logo">
-                            <h2>Weatherfully</h2>
+                            <h2><a href="/">Weatherfully</a></h2>
                         </div>
                     </div>
                     <div className="col-10">
@@ -48,7 +48,7 @@ export const Layout = ({children}) => {
                 <div className="row">
                     <div className="col-12">
                         <div className="footer">
-                            <p>Weatherfully &copy; 2023 - Created by <a href="https://jameslatten.com">James</a> from <a href="https://lattentechnologies.com">Latten Technologies, LLC</a></p>
+                            <p><a href="/">Weatherfully</a> &copy; 2023 - Created by <a href="https://jameslatten.com">James</a> from <a href="https://lattentechnologies.com">Latten Technologies, LLC</a></p>
                         </div>
                     </div>
                 </div>
